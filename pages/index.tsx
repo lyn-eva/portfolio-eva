@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
+import SeeMoreBtn from '../components/SeeMoreBtn';
 
 const Home: NextPage = () => {
   return (
@@ -16,8 +17,8 @@ const Home: NextPage = () => {
           <Icon className='text-3xl' icon='heroicons-outline:menu-alt-1' />
         </nav>
       </header>
-      <main>
-        <section className='h-screen grid place-items-center'>
+      <main className='text-center'>
+        {/* <section className='h-screen grid place-items-center'>
           <div>
             <p className='font-medium text-lg pl-[2px]'>
               Hi I am <span className='text-showy-violet'>Zayar Lynn</span>
@@ -29,20 +30,21 @@ const Home: NextPage = () => {
               <button className='border-showy-violet tracking-wide border-2 px-10 py-1 rounded-md hover:text-white hover:bg-showy-violet duration-200 active:opacity-80'>
                 Blogs
               </button>
-              <button className='flex items-center gap-1 tracking-wide group'>
-                <span className='border-darken-green border-b-[1px] group-hover:border-showy-violet leading-5 '>
-                  view projects
-                </span>
-                <Icon
-                  className='text-xl group-hover:translate-x-2 mt-[2px] duration-300'
-                  icon='bi:arrow-right'
-                />
-              </button>
+              <SeeMoreBtn>view projects</SeeMoreBtn>
             </div>
           </div>
-        </section>
-        <section>
-          projects ofc
+        </section> */}
+        <section>projects ofc</section>
+        <section className='min-h-screen grid place-items-center pt-20 mt-12'>
+          <h2 className='text-3xl font-semibold tracking-wide'>Who I am?</h2>
+          <p className='text-lg px-2 my-5'>
+            I am an undergraduate who focus in Computer Science. I have a great interest in Math and
+            Programming.
+          </p>
+          <SeeMoreBtn>more details</SeeMoreBtn>
+          <div className='relative w-full h-[calc(100vw+5rem)]'>
+            <Image className='w-full object-contain outline scale-110' src='/assets/punpun.png' alt='oyasumi punpun' layout='fill'/>
+          </div>
         </section>
       </main>
     </div>
