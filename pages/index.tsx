@@ -4,28 +4,28 @@ import { Icon } from '@iconify/react';
 
 const Home: NextPage = () => {
   return (
-    <div className='mx-auto w-[90%] flex flex-col min-h-screen'>
+    <div className='font-inter mx-auto w-[90%] flex flex-col min-h-screen'>
       <header className='py-5 flex items-center justify-between'>
         <div className='relative flex gap-2 bg-white'>
-          <span className='font-extrabold text-xl'>LYNE</span>
+          <span className='font-black text-xl'>LYNE</span>
           <div className='relative w-[30px]'>
             <Image layout='fill' src='/torii.svg' alt='torii logo' />
           </div>
         </div>
         <nav>
-          <Icon className='text-[26px]' icon='heroicons-outline:menu-alt-1' />
+          <Icon className='text-3xl' icon='heroicons-outline:menu-alt-1' />
         </nav>
       </header>
       <main className='grow flex items-center'>
         <div className='-mt-[20vh]'>
-          <p className='font-medium pl-[2px]'>
+          <p className='font-medium text-lg pl-[2px]'>
             Hi I am <span className='text-showy-violet'>Zayar Lynn</span>
           </p>
-          <h1 className='text-[25px] mt-3 font-black tracking-wide'>
+          <h1 className='text-3xl mt-3 font-black tracking-wide'>
             Self-driven developer who loves to explore new technologies
           </h1>
-          <div className='flex items-center gap-[10vw] mt-8'>
-            <button className='border-showy-violet tracking-wide border-2 px-8 py-1 rounded-md hover:text-white hover:bg-showy-violet duration-200 active:bg-white active:text-darken-green'>
+          <div className='flex items-center gap-[10vw] mt-10'>
+            <button className='border-showy-violet tracking-wide border-2 px-10 py-1 rounded-md hover:text-white hover:bg-showy-violet duration-200 active:bg-white active:text-darken-green'>
               Blogs
             </button>
             <button className='flex items-center gap-1 tracking-wide group'>
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
             </button>
           </div>
         </div>
-      <div className='absolute w-full left-0 -z-10'>
+      {/* <div className='absolute w-full left-0 -z-10'>
         <svg
           viewBox='0 0 320 504'
           fill='none'
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
             <path d='M89.197 364.604H86.7125' stroke='black' strokeWidth='3' />
           </g>
         </svg>
-      </div>
+      </div> */}
       </main>
     </div>
   );
