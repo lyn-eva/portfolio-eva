@@ -6,20 +6,22 @@ import SeeMoreBtn from '../components/SeeMoreBtn';
 const Home: NextPage = () => {
   return (
     <div className='font-inter mx-auto w-[90%]'>
-      <header className='py-7 flex items-center justify-between fixed w-[90%] left-[5%] bg-white'>
-        <div className='relative flex gap-2 bg-white'>
-          <span className='font-black text-xl'>LYNE</span>
-          <div className='relative w-[30px]'>
-            <Image layout='fill' src='/torii.svg' alt='torii logo' />
+      <header className='pt-7 sticky -top-7'>
+        <div className='flex items-center justify-between py-3 duration-1000 sticky top-4 bg-white'>
+          <div className='relative flex gap-2'>
+            <span className='font-black text-xl'>LYNE</span>
+            <div className='relative w-[30px]'>
+              <Image layout='fill' src='/torii.svg' alt='torii logo' />
+            </div>
           </div>
+          <nav>
+            <Icon className='text-3xl' icon='heroicons-outline:menu-alt-1' />
+          </nav>
         </div>
-        <nav>
-          <Icon className='text-3xl' icon='heroicons-outline:menu-alt-1' />
-        </nav>
       </header>
       <main className='text-center'>
-        {/* <section className='h-screen grid place-items-center'>
-          <div>
+        <section className='h-[calc(100vh-5rem)] grid place-items-center'>
+          <div className='-mt-8'>
             <p className='font-medium text-lg pl-[2px]'>
               Hi I am <span className='text-showy-violet'>Zayar Lynn</span>
             </p>
@@ -33,7 +35,7 @@ const Home: NextPage = () => {
               <SeeMoreBtn>view projects</SeeMoreBtn>
             </div>
           </div>
-        </section> */}
+        </section>
         <section>projects ofc</section>
         <section className='min-h-screen grid place-items-center pt-20 mt-12'>
           <h2 className='text-3xl font-semibold tracking-wide'>Who I am?</h2>
