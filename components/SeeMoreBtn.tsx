@@ -11,7 +11,7 @@ const SeeMoreBtn: React.FC<Props> = ({ children }) => {
         {children}
       </span>
       <Icon
-        className='text-xl group-hover:translate-x-2 mt-[2px] duration-300'
+        className='text-xl group-hover:translate-x-1 mt-[2px] duration-300'
         icon='bi:arrow-right'
       />
     </button>
