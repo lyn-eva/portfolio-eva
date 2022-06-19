@@ -16,10 +16,19 @@ const projects = [
   },
 ];
 
+const social = [
+  { title: 'Linkedin', icon: 'akar-icons:linkedin-v1-fill' },
+  { title: 'Discord', icon: 'akar-icons:discord-fill' },
+  { title: 'Twitter', icon: 'akar-icons:twitter-fill' },
+  { title: 'Instagram', icon: 'akar-icons:instagram-fill' },
+];
+
+const nav = ['Projects', 'About', 'Page'];
+
 const Home: NextPage = () => {
   return (
-    <div className='mx-auto w-[90%] font-inter'>
-      <header className='sticky -top-7 z-10 pt-7'>
+    <div className='font-inter'>
+      <header className='sticky -top-7 z-10 mx-auto w-[90%] pt-7'>
         <div className='sticky top-4 flex items-center justify-between bg-white py-3 duration-1000'>
           <div className='relative flex gap-2'>
             <span className='text-xl font-black'>LYNE</span>
@@ -27,12 +36,25 @@ const Home: NextPage = () => {
               <Image layout='fill' src='/torii.svg' alt='torii logo' />
             </div>
           </div>
-          <nav>
-            <Icon className='cursor-pointer text-3xl' icon='heroicons-outline:menu-alt-1' />
+          <nav className='group'>
+            <button>
+              <Icon className='text-3xl' icon='heroicons-outline:menu-alt-1' />
+            </button>
+            <ul className='-z-10 fixed right-0 top-0 h-screen w-full bg-white pt-24 shadow-md group-focus-within:translate-x-0 -translate-x-full duration-300'>
+              {nav.map((item) => (
+                <li
+                  key={item}
+                  className='after:contents-[""] relative cursor-pointer px-[5vw] py-4 text-2xl tracking-wide after:absolute after:left-0 after:top-0
+                  after:-z-10 after:h-full after:w-full after:origin-left after:scale-x-0 after:bg-slate-300 after:duration-300 hover:after:scale-x-100'
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
       </header>
-      <main>
+      <main className='mx-auto w-[90%]'>
         <section className='grid h-[calc(100vh-5rem)] place-items-center'>
           <div className='-mt-[7vh]'>
             <p className='pl-[2px] text-lg font-medium'>
@@ -103,10 +125,31 @@ const Home: NextPage = () => {
               src='/assets/punpun.png'
               alt='oyasumi punpun'
               layout='fill'
+              title='oyasumi punpun'
             />
           </div>
         </section>
       </main>
+      <footer className='bg-gray-200 py-8'>
+        <div className='mx-auto w-[90%]'>
+          <div className='relative flex gap-4'>
+            <span className='text-3xl font-black'>LYNE</span>
+            <div className='relative w-[40px]'>
+              <Image layout='fill' src='/torii.svg' alt='torii logo' />
+            </div>
+          </div>
+          <ul className='mt-12 mb-8 flex justify-center gap-[min(3rem,7vw)]'>
+            {social.map(({ title, icon }) => (
+              <li key={title}>
+                <a href='' target='_blank' title={title}>
+                  <Icon className='text-3xl duration-200 hover:text-showy-violet' icon={icon} />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <span className='block text-center text-lg'>zayar.lynn.dev@gmail.com</span>
+        </div>
+      </footer>
     </div>
   );
 };
