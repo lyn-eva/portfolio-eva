@@ -28,23 +28,23 @@ const nav = ['Projects', 'About', 'Page'];
 const Home: NextPage = () => {
   return (
     <div className='font-inter'>
-      <header className='sticky -top-7 z-10 mx-auto w-[90%] pt-7'>
-        <div className='sticky top-4 flex items-center justify-between bg-white py-3 duration-1000'>
+      <header className='sticky -top-7 sm:-top-10 z-10 mx-auto w-[90%] pt-7 sm:pt-8'>
+        <div className='sticky top-4 flex items-center justify-between bg-white py-3 sm:py-5 duration-1000'>
           <div className='relative flex gap-2'>
-            <span className='text-xl font-black'>LYNE</span>
-            <div className='relative w-[30px]'>
+            <span className='text-xl font-black sm:text-2xl'>LYNE</span>
+            <div className='relative w-[30px] sm:w-[37px]'>
               <Image layout='fill' src='/torii.svg' alt='torii logo' />
             </div>
           </div>
           <nav className='group'>
             <button>
-              <Icon className='text-3xl' icon='heroicons-outline:menu-alt-1' />
+              <Icon className='text-3xl sm:text-4xl' icon='heroicons-outline:menu-alt-1' />
             </button>
-            <ul className='-z-10 fixed right-0 top-0 h-screen w-full bg-white pt-24 shadow-md group-focus-within:translate-x-0 -translate-x-full duration-300'>
+            <ul className='fixed right-0 top-0 -z-10 h-screen w-full -translate-x-full bg-white pt-28 text-center shadow-md duration-300 group-focus-within:translate-x-0'>
               {nav.map((item) => (
                 <li
                   key={item}
-                  className='after:contents-[""] relative cursor-pointer px-[5vw] py-4 text-2xl tracking-wide after:absolute after:left-0 after:top-0
+                  className='after:contents-[""] relative cursor-pointer px-[5vw] py-4 text-3xl tracking-wide after:absolute after:left-0 after:top-0
                   after:-z-10 after:h-full after:w-full after:origin-left after:scale-x-0 after:bg-slate-300 after:duration-300 hover:after:scale-x-100'
                 >
                   {item}
@@ -57,14 +57,14 @@ const Home: NextPage = () => {
       <main className='mx-auto w-[90%]'>
         <section className='grid h-[calc(100vh-5rem)] place-items-center'>
           <div className='-mt-[7vh]'>
-            <p className='pl-[2px] text-lg font-medium'>
+            <p className='pl-[2px] text-lg  font-medium sm:text-xl'>
               Hi I am <span className='text-showy-violet'>Zayar Lynn</span>
             </p>
-            <h1 className='mt-3 text-3xl font-black leading-10 tracking-wide'>
+            <h1 className='mt-3 text-3xl font-black leading-10 tracking-wide sm:mt-4 sm:text-4xl'>
               Self-driven developer who loves to explore new technologies
             </h1>
-            <div className='mt-14 flex items-center gap-[10vw]'>
-              <button className='rounded-md border-2 border-showy-violet px-10 py-1 tracking-wide duration-200 hover:bg-showy-violet hover:text-white active:opacity-80'>
+            <div className='mt-14 flex items-center gap-[10vw] sm:mt-16 sm:gap-[15vw]'>
+              <button className='rounded-md border-2 border-showy-violet px-10 py-1 tracking-wide duration-200 hover:bg-showy-violet hover:text-white active:opacity-80 sm:px-12 sm:py-[6px] sm:text-xl'>
                 Blogs
               </button>
               <SeeMoreBtn>view projects</SeeMoreBtn>
@@ -78,9 +78,9 @@ const Home: NextPage = () => {
               Projects
             </h2>
           </div>
-          <ul className='mt-20'>
+          <ul className='mt-20 sm:mt-28 sm:mx-auto sm:max-w-[28rem]'>
             {projects.map(({ title, thumb, techstack }) => (
-              <li key={title} className='mb-8 rounded-md bg-gray-300 px-5 py-8'>
+              <li key={title} className='mb-8 sm:mb-12 rounded-md bg-gray-300 px-5 py-8 sm:px-7 sm:py-9'>
                 <div className='group relative aspect-square w-full cursor-pointer bg-[#0749bd10] opacity-90 backdrop-blur-lg'>
                   <Image
                     className='duration-500 group-hover:scale-[80%]'
@@ -89,19 +89,19 @@ const Home: NextPage = () => {
                     layout='fill'
                   />
                 </div>
-                <h3 className='mt-6 text-2xl'>{title}</h3>
-                <div className='mt-4 flex gap-2 text-sm text-white'>
+                <h3 className='mt-6 sm:text-3xl text-2xl'>{title}</h3>
+                <div className='mt-4 flex gap-2 sm:mt-7 sm:gap-3 text-sm text-white'>
                   {techstack.map((item) => (
                     <div
-                      className='rounded-[4px] bg-showy-violet px-4 py-1 text-[16px] font-normal tracking-wide'
+                      className='rounded-[4px] bg-showy-violet px-4 sm:px-5 sm:py-[5px] py-1 text-[16px] font-normal tracking-wide'
                       key={item}
                     >
                       {item}
                     </div>
                   ))}
                 </div>
-                <div className='flex-x mt-7'>
-                  <button className='rounded-[5px] border-2 border-showy-violet px-7 py-[3px] tracking-wide duration-300 hover:bg-showy-violet hover:text-white active:opacity-70'>
+                <div className='flex-x mt-7 sm:mt-12'>
+                  <button className='rounded-[5px] border-2 border-showy-violet px-7 sm:px-9 sm:text-xl sm:py-1 py-[3px] tracking-wide duration-300 hover:bg-showy-violet hover:text-white active:opacity-70'>
                     preview
                   </button>
                   <button>
@@ -112,7 +112,7 @@ const Home: NextPage = () => {
             ))}
           </ul>
         </section>
-        <section className='mt-20 grid min-h-screen place-items-center pt-20 text-center'>
+        <section className='sm:max-w-[28rem] sm:mx-auto mt-20 grid min-h-screen place-items-center pt-20 text-center'>
           <h2 className='text-3xl font-semibold tracking-wide'>Who I am?</h2>
           <p className='my-5 px-2 text-lg'>
             I am an undergraduate who focus in Computer Science. I have a great interest in Math and
