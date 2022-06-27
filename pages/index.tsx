@@ -14,6 +14,16 @@ const projects = [
     thumb: '/assets/thumb-2.jpg',
     techstack: ['nextjs', 'django', 'mysql'],
   },
+  {
+    title: 'Fullstack e-commerce web app',
+    thumb: '/assets/thumb-1.jpg',
+    techstack: ['nextjs', 'django', 'mysql'],
+  },
+  {
+    title: 'POS tea shop website',
+    thumb: '/assets/thumb-2.jpg',
+    techstack: ['nextjs', 'django', 'mysql'],
+  },
 ];
 
 const social = [
@@ -28,24 +38,27 @@ const nav = ['Projects', 'About', 'Page'];
 const Home: NextPage = () => {
   return (
     <div className='font-inter'>
-      <header className='sticky -top-7 z-10 mx-auto w-[90%] pt-7 sm:-top-10 sm:pt-8'>
-        <div className='sticky top-4 flex items-center justify-between bg-white py-3 duration-1000 sm:py-5'>
+      <header className='sticky -top-7 z-10 mx-auto w-[90%] pt-7 sm:-top-10 sm:pt-8 lg:-top-5 lg:pt-0'>
+        <div className='sticky top-4 flex items-center justify-between bg-white py-3 duration-1000 sm:py-5 lg:pt-8 lg:pb-5'>
           <div className='relative flex gap-2'>
             <span className='text-xl font-black sm:text-2xl'>LYNE</span>
             <div className='relative w-[30px] sm:w-[37px]'>
               <Image layout='fill' src='/torii.svg' alt='torii logo' />
             </div>
           </div>
-          <nav className='group'>
+          <nav className='group lg:grid'>
             <button>
-              <Icon className='text-3xl sm:text-4xl' icon='heroicons-outline:menu-alt-1' />
+              <Icon
+                className='text-3xl sm:text-4xl lg:hidden'
+                icon='heroicons-outline:menu-alt-1'
+              />
             </button>
-            <ul className='fixed right-0 top-0 -z-10 h-screen w-full -translate-x-full bg-white pt-28 text-center shadow-md duration-300 group-focus-within:translate-x-0'>
+            <ul className='fixed right-0 top-0 -z-10 h-screen w-full -translate-x-full bg-white pt-28 text-center shadow duration-300 group-focus-within:translate-x-0 lg:static lg:flex lg:h-auto lg:translate-x-0 lg:gap-20 lg:pt-0 lg:shadow-none'>
               {nav.map((item) => (
                 <li
                   key={item}
-                  className='after:contents-[""] relative cursor-pointer px-[5vw] py-4 text-3xl tracking-wide after:absolute after:left-0 after:top-0
-                  after:-z-10 after:h-full after:w-full after:origin-left after:scale-x-0 after:bg-slate-300 after:duration-300 hover:after:scale-x-100'
+                  className='after:contents-[""] relative cursor-pointer px-[5vw] py-4 text-3xl tracking-wide after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:origin-left
+                  after:scale-x-0 after:bg-slate-300 after:duration-300 hover:after:scale-x-100 lg:py-0 lg:px-0 lg:text-xl lg:after:hidden'
                 >
                   {item}
                 </li>
@@ -55,24 +68,25 @@ const Home: NextPage = () => {
         </div>
       </header>
       <main className='mx-auto w-[90%]'>
-        <section className='relative grid h-[calc(100vh-114px)] place-items-center lg:justify-start'>
+        <section className='relative grid h-[calc(100vh-84px)] place-items-center lg:justify-start'>
           <div className='-mt-[7vh]'>
             <p className='pl-[2px] text-lg  font-medium sm:text-xl'>
               Hi I am <span className='text-showy-violet'>Zayar Lynn</span>
             </p>
-            <h1 className='mt-3 lg:mt-5 lg:leading-[1.3] text-3xl font-black leading-10 tracking-wide sm:mt-4 sm:text-4xl'>
-              Self-driven developer who loves <br className='lg:block' /> to explore new technologies
+            <h1 className='mt-3 bg-white text-3xl font-black leading-10 tracking-wide sm:mt-4 sm:text-4xl lg:mt-5 lg:text-[2.5rem] lg:leading-[1.4]'>
+              Self-driven developer who loves <br className='lg:block' /> to explore new
+              technologies
             </h1>
-            <div className='mt-14 lg:mt-24 flex items-center gap-[10vw] sm:mt-16 sm:gap-[15vw] lg:gap-28'>
+            <div className='mt-14 flex items-center gap-[10vw] sm:mt-16 sm:gap-[15vw] lg:mt-24 lg:gap-28'>
               <button className='rounded-md border-2 border-showy-violet px-10 py-1 tracking-wide duration-200 hover:bg-showy-violet hover:text-white active:opacity-80 sm:px-12 sm:py-[6px] sm:text-xl'>
                 Blogs
               </button>
               <SeeMoreBtn>view projects</SeeMoreBtn>
             </div>
           </div>
-          <div className='absolute top-0 left-0 h-full w-full'>
+          <div className='absolute top-0 left-0 -z-20 hidden h-full w-full lg:block'>
             <svg
-            className='h-full ml-auto opacity-40'
+              className='ml-auto h-full opacity-40'
               viewBox='0 0 1567 969'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -103,7 +117,7 @@ const Home: NextPage = () => {
               Projects
             </h2>
           </div>
-          <ul className='mx-auto mt-20 max-w-[28rem] sm:mt-28'>
+          <ul className='mx-auto mt-20 max-w-[28rem] grid-cols-2 sm:mt-28 lg:grid lg:max-w-none lg:gap-[10vw]'>
             {projects.map(({ title, thumb, techstack }) => (
               <li
                 key={title}
@@ -140,14 +154,16 @@ const Home: NextPage = () => {
             ))}
           </ul>
         </section>
-        <section className='mx-auto mt-20 grid min-h-screen max-w-md place-items-center pt-20 text-center'>
-          <h2 className='text-3xl font-semibold tracking-wide'>Who I am?</h2>
-          <p className='my-5 px-2 text-lg'>
-            I am an undergraduate who focus in Computer Science. I have a great interest in Math and
-            Programming.
-          </p>
-          <SeeMoreBtn>more details</SeeMoreBtn>
-          <div className='relative mb-16 mt-[5vw] aspect-square w-full'>
+        <section className='mx-auto mt-20 grid min-h-screen max-w-md place-items-center items-center pt-20 text-center lg:flex lg:max-w-none lg:flex-row-reverse lg:gap-[15vw]'>
+          <div className='lg:flex lg:w-full lg:flex-col lg:items-center'>
+            <h2 className='text-3xl lg:text-4xl font-semibold tracking-wide'>Who I am?</h2>
+            <p className='my-5 lg:leading-8 lg:text-xl lg:my-8 px-2 text-lg'>
+              I am an undergraduate who focus in Computer Science. I have a great interest in Math
+              and Programming.
+            </p>
+            <SeeMoreBtn>more details</SeeMoreBtn>
+          </div>
+          <div className='relative mb-16 mt-[5vw] aspect-square w-full lg:mt-0'>
             <Image
               className='w-full scale-110 object-contain outline'
               src='/assets/punpun.png'
